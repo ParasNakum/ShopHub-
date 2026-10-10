@@ -57,9 +57,9 @@
 
                 <!-- Price -->
                 <div class="mb-4 p-3 bg-light rounded-3 d-flex align-items-baseline gap-3">
-                    <span class="fs-2 fw-bold text-primary">${{ number_format($product->price, 2) }}</span>
+                    <span class="fs-2 fw-bold text-primary">₹{{ number_format($product->price, 2) }}</span>
                     @if($product->compare_price)
-                        <span class="fs-5 text-muted text-decoration-line-through">${{ number_format($product->compare_price, 2) }}</span>
+                        <span class="fs-5 text-muted text-decoration-line-through">₹{{ number_format($product->compare_price, 2) }}</span>
                         <span class="badge bg-danger fs-6">Save {{ $product->discount_percentage }}%</span>
                     @endif
                 </div>
@@ -95,7 +95,7 @@
                 <!-- Shipping / Guarantee bullets -->
                 <div class="border-top pt-3 text-muted small">
                     <div class="row g-2">
-                        <div class="col-sm-6"><i class="bi bi-truck text-primary me-2"></i>Free standard delivery over $100</div>
+                        <div class="col-sm-6"><i class="bi bi-truck text-primary me-2"></i>Free standard delivery over ₹999</div>
                         <div class="col-sm-6"><i class="bi bi-shield-check text-success me-2"></i>Verified seller guarantee</div>
                         <div class="col-sm-6"><i class="bi bi-arrow-repeat text-info me-2"></i>7-day return policy</div>
                         <div class="col-sm-6"><i class="bi bi-credit-card text-warning me-2"></i>Multiple payment options</div>
@@ -206,7 +206,7 @@
                                 <h6 class="card-title fw-bold text-truncate mb-1">
                                     <a href="{{ route('products.show', $rel->slug) }}" class="text-decoration-none text-dark">{{ $rel->name }}</a>
                                 </h6>
-                                <span class="fw-bold text-primary">${{ number_format($rel->price, 2) }}</span>
+                                <span class="fw-bold text-primary">₹{{ number_format($rel->price, 2) }}</span>
                             </div>
                         </div>
                     </div>

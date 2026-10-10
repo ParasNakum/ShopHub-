@@ -19,6 +19,8 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot(): void
     {
-        //
+        \Illuminate\Support\Facades\Blade::directive('currency', function ($expression) {
+            return "<?php echo '₹' . number_format($expression, 2); ?>";
+        });
     }
 }

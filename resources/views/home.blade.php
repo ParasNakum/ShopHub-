@@ -36,7 +36,7 @@
             <div class="card p-3 h-100 text-center">
                 <i class="bi bi-truck fs-1 text-primary mb-2"></i>
                 <h6 class="fw-bold mb-1">Fast Delivery</h6>
-                <small class="text-muted">Free shipping on orders > $100</small>
+                <small class="text-muted">Free shipping on orders > ₹999</small>
             </div>
         </div>
         <div class="col-6 col-md-3">
@@ -128,9 +128,9 @@
                                 </div>
                                 <div class="mt-auto d-flex align-items-center justify-content-between pt-2 border-top">
                                     <div>
-                                        <span class="fw-bold text-primary fs-5">${{ number_format($product->price, 2) }}</span>
+                                        <span class="fw-bold text-primary fs-5">₹{{ number_format($product->price, 2) }}</span>
                                         @if($product->compare_price)
-                                            <span class="text-muted text-decoration-line-through small ms-1">${{ number_format($product->compare_price, 2) }}</span>
+                                            <span class="text-muted text-decoration-line-through small ms-1">₹{{ number_format($product->compare_price, 2) }}</span>
                                         @endif
                                     </div>
                                     <form action="{{ route('cart.add', $product->id) }}" method="POST">
@@ -188,9 +188,9 @@
                             </div>
                             <div class="mt-auto d-flex align-items-center justify-content-between pt-2 border-top">
                                 <div>
-                                    <span class="fw-bold text-primary fs-5">${{ number_format($product->price, 2) }}</span>
+                                    <span class="fw-bold text-primary fs-5">₹{{ number_format($product->price, 2) }}</span>
                                     @if($product->compare_price)
-                                        <span class="text-muted text-decoration-line-through small ms-1">${{ number_format($product->compare_price, 2) }}</span>
+                                        <span class="text-muted text-decoration-line-through small ms-1">₹{{ number_format($product->compare_price, 2) }}</span>
                                     @endif
                                 </div>
                                 <form action="{{ route('cart.add', $product->id) }}" method="POST">

@@ -19,7 +19,7 @@
     <div class="bg-dark text-white py-1 small">
         <div class="container d-flex justify-content-between align-items-center">
             <div>
-                <span><i class="bi bi-truck me-1"></i> Free Shipping on orders over $100</span>
+                <span><i class="bi bi-truck me-1"></i> Free Shipping on orders over ₹999</span>
                 <span class="ms-3 d-none d-md-inline"><i class="bi bi-shield-check me-1"></i> 100% Secure Checkout</span>
             </div>
             <div class="d-flex align-items-center gap-3">

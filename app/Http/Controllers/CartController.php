@@ -26,7 +26,7 @@ class CartController extends Controller
             return $item->product ? $item->product->price * $item->quantity : 0;
         });
 
-        $shipping = $subtotal > 0 ? ($subtotal >= 100 ? 0 : 15.00) : 0;
+        $shipping = $subtotal > 0 ? ($subtotal >= 999 ? 0 : 99.00) : 0;
         $tax = round($subtotal * 0.05, 2);
         $total = $subtotal + $shipping + $tax;
 

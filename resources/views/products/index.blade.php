@@ -45,7 +45,7 @@
 
                     <!-- Price Range -->
                     <div class="mb-3">
-                        <label class="form-label small fw-bold text-muted">Price Range ($)</label>
+                        <label class="form-label small fw-bold text-muted">Price Range (₹)</label>
                         <div class="row g-2">
                             <div class="col-6">
                                 <input type="number" name="min_price" class="form-control form-control-sm" placeholder="Min" value="{{ request('min_price') }}">
@@ -122,9 +122,9 @@
                                     </div>
                                     <div class="mt-auto d-flex align-items-center justify-content-between pt-2 border-top">
                                         <div>
-                                            <span class="fw-bold text-primary fs-5">${{ number_format($product->price, 2) }}</span>
+                                            <span class="fw-bold text-primary fs-5">₹{{ number_format($product->price, 2) }}</span>
                                             @if($product->compare_price)
-                                                <span class="text-muted text-decoration-line-through small ms-1">${{ number_format($product->compare_price, 2) }}</span>
+                                                <span class="text-muted text-decoration-line-through small ms-1">₹{{ number_format($product->compare_price, 2) }}</span>
                                             @endif
                                         </div>
                                         <form action="{{ route('cart.add', $product->id) }}" method="POST">

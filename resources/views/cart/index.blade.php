@@ -63,7 +63,7 @@
                                                 </div>
                                             </td>
                                             <td class="fw-semibold">
-                                                ${{ number_format($item->product ? $item->product->price : 0, 2) }}
+                                                ₹{{ number_format($item->product ? $item->product->price : 0, 2) }}
                                             </td>
                                             <td>
                                                 @if($item->product)
@@ -77,7 +77,7 @@
                                                 @endif
                                             </td>
                                             <td class="fw-bold text-primary">
-                                                ${{ number_format($item->subtotal, 2) }}
+                                                ₹{{ number_format($item->subtotal, 2) }}
                                             </td>
                                             <td class="text-end">
                                                 <form action="{{ route('cart.remove', $item->id) }}" method="POST">
@@ -109,12 +109,12 @@
 
                     <div class="d-flex justify-content-between mb-2">
                         <span class="text-muted">Subtotal</span>
-                        <span class="fw-semibold">${{ number_format($subtotal, 2) }}</span>
+                        <span class="fw-semibold">₹{{ number_format($subtotal, 2) }}</span>
                     </div>
 
                     <div class="d-flex justify-content-between mb-2">
                         <span class="text-muted">Estimated Tax (5%)</span>
-                        <span class="fw-semibold">${{ number_format($tax, 2) }}</span>
+                        <span class="fw-semibold">₹{{ number_format($tax, 2) }}</span>
                     </div>
 
                     <div class="d-flex justify-content-between mb-2">
@@ -122,13 +122,13 @@
                         @if($shipping == 0 && $subtotal > 0)
                             <span class="text-success fw-bold">FREE</span>
                         @else
-                            <span class="fw-semibold">${{ number_format($shipping, 2) }}</span>
+                            <span class="fw-semibold">₹{{ number_format($shipping, 2) }}</span>
                         @endif
                     </div>
 
-                    @if($subtotal < 100 && $subtotal > 0)
+                    @if($subtotal < 999 && $subtotal > 0)
                         <div class="alert alert-info py-2 small my-2">
-                            <i class="bi bi-info-circle me-1"></i> Add <strong>${{ number_format(100 - $subtotal, 2) }}</strong> more to get <strong>FREE SHIPPING</strong>!
+                            <i class="bi bi-info-circle me-1"></i> Add <strong>₹{{ number_format(999 - $subtotal, 2) }}</strong> more to get <strong>FREE SHIPPING</strong>!
                         </div>
                     @endif
 
@@ -136,7 +136,7 @@
 
                     <div class="d-flex justify-content-between mb-4">
                         <span class="fw-bold fs-5">Estimated Total</span>
-                        <span class="fw-bold fs-5 text-primary">${{ number_format($total, 2) }}</span>
+                        <span class="fw-bold fs-5 text-primary">₹{{ number_format($total, 2) }}</span>
                     </div>
 
                     <a href="{{ route('checkout') }}" class="btn btn-primary w-100 py-2 fw-semibold">

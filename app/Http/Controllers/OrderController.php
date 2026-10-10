@@ -30,7 +30,7 @@ class OrderController extends Controller
             return $item->product ? $item->product->price * $item->quantity : 0;
         });
 
-        $shipping = $subtotal >= 100 ? 0 : 15.00;
+        $shipping = $subtotal >= 999 ? 0 : 99.00;
         $tax = round($subtotal * 0.05, 2);
         $total = $subtotal + $shipping + $tax;
 
@@ -72,7 +72,7 @@ class OrderController extends Controller
         }
 
         $subtotal = $cartItems->sum(fn($i) => $i->product->price * $i->quantity);
-        $shipping = $subtotal >= 100 ? 0 : 15.00;
+        $shipping = $subtotal >= 999 ? 0 : 99.00;
         $tax = round($subtotal * 0.05, 2);
         $total = $subtotal + $shipping + $tax;
 
