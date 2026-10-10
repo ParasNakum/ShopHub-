@@ -1,0 +1,193 @@
+:root {
+    --sh-primary: #2563eb;
+    --sh-primary-dark: #1d4ed8;
+    --sh-secondary: #0f172a;
+    --sh-accent: #10b981;
+    --sh-warning: #f59e0b;
+    --sh-danger: #ef4444;
+    --sh-bg-light: #f8fafc;
+    --sh-card-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.07), 0 2px 4px -2px rgba(0, 0, 0, 0.05);
+    --sh-card-shadow-hover: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -4px rgba(0, 0, 0, 0.08);
+}
+
+body {
+    font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+    background-color: var(--sh-bg-light);
+    color: #334155;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+main {
+    flex: 1;
+}
+
+/* Navbar */
+.navbar-brand {
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    font-size: 1.5rem;
+}
+
+.navbar-brand .hub-badge {
+    background: linear-gradient(135deg, #2563eb, #3b82f6);
+    color: white;
+    padding: 2px 8px;
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+/* Cards & Badges */
+.card {
+    border-radius: 12px;
+    border: 1px solid #e2e8f0;
+    box-shadow: var(--sh-card-shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.card:hover {
+    box-shadow: var(--sh-card-shadow-hover);
+}
+
+.product-card {
+    overflow: hidden;
+    height: 100%;
+}
+
+.product-card .product-img-wrapper {
+    position: relative;
+    height: 220px;
+    overflow: hidden;
+    background-color: #f1f5f9;
+}
+
+.product-card .product-img-wrapper img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.product-card:hover .product-img-wrapper img {
+    transform: scale(1.05);
+}
+
+.badge-discount {
+    position: absolute;
+    top: 10px;
+    left: 10px;
+    background-color: #ef4444;
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 20px;
+}
+
+/* Hero Section */
+.hero-banner {
+    background: linear-gradient(135deg, #0f172a 0%, #1e293b 50%, #2563eb 100%);
+    color: white;
+    border-radius: 16px;
+    padding: 4rem 2.5rem;
+    position: relative;
+    overflow: hidden;
+}
+
+.hero-banner::after {
+    content: '';
+    position: absolute;
+    right: -50px;
+    bottom: -50px;
+    width: 300px;
+    height: 300px;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Category Pills */
+.category-card {
+    text-align: center;
+    padding: 1.5rem 1rem;
+    border-radius: 12px;
+    background: white;
+    text-decoration: none;
+    color: #334155;
+    border: 1px solid #e2e8f0;
+    transition: all 0.2s ease;
+    display: block;
+}
+
+.category-card:hover {
+    border-color: #2563eb;
+    transform: translateY(-4px);
+    box-shadow: var(--sh-card-shadow-hover);
+    color: #2563eb;
+}
+
+.category-icon {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    background: #eff6ff;
+    color: #2563eb;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.5rem;
+    margin-bottom: 0.75rem;
+}
+
+/* Admin & Seller Sidebar */
+.dashboard-sidebar {
+    background-color: #0f172a;
+    color: #94a3b8;
+    min-height: calc(100vh - 56px);
+}
+
+.dashboard-sidebar .nav-link {
+    color: #94a3b8;
+    padding: 0.75rem 1.25rem;
+    border-radius: 8px;
+    margin: 4px 10px;
+    display: flex;
+    align-items: center;
+    font-weight: 500;
+}
+
+.dashboard-sidebar .nav-link i {
+    margin-right: 10px;
+    font-size: 1.2rem;
+}
+
+.dashboard-sidebar .nav-link:hover,
+.dashboard-sidebar .nav-link.active {
+    background-color: #1e293b;
+    color: #ffffff;
+}
+
+.stat-card {
+    border-radius: 12px;
+    padding: 1.25rem;
+    display: flex;
+    align-items: center;
+}
+
+.stat-icon {
+    width: 54px;
+    height: 54px;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.75rem;
+    margin-right: 1rem;
+}
+
+/* Quick Fill Buttons */
+.quick-login-btn {
+    font-size: 0.8rem;
+    padding: 0.25rem 0.5rem;
+    border-radius: 4px;
+}
